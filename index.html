@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Gummi: All-in-One AI Chatbot</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <link rel="stylesheet" href="styles.css?v=3.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/images/logo_gummi.png" alt="Gummi" class="nav-logo">
+                <span class="nav-title gummi-text">Gummi</span>
+            </div>
+            <div class="nav-actions">
+                <a href="#community" class="nav-link">Community</a>
+                <a href="#features" class="nav-link">Features</a>
+                <div class="theme-selector">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <div class="theme-menu" id="theme-menu">
+                        <button class="theme-option" data-theme="light">
+                            <span class="theme-option-icon">☀️</span>
+                            <span class="theme-option-text">Light</span>
+                        </button>
+                        <button class="theme-option" data-theme="dark">
+                            <span class="theme-option-icon">🌙</span>
+                            <span class="theme-option-text">Dark</span>
+                        </button>
+                        <button class="theme-option" data-theme="system">
+                            <span class="theme-option-icon">💻</span>
+                            <span class="theme-option-text">System</span>
+                        </button>
+                    </div>
+                </div>
+                <a href="#intro-actions" class="btn-primary" id="nav-try-free">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-rating">
+                    <div class="rating-badge">
+                        <span class="rating-stars">★★★★★</span>
+                        <span class="rating-text">4.9</span>
+                    </div>
+                    <span class="rating-subtitle">30K+ Downloads • 500K+ Uses</span>
+                </div>
+
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <div class="typing-wrapper">
+                            <span id="typing-text" class="typing-text"></span><span class="typing-cursor"></span>
+                        </div>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Join over <strong>30,000+ users</strong> transforming photos into unique stories with AI-powered
+                        captions, perfect music selection, and unlimited chat handling up to <strong>2.9 million
+                            characters</strong>.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="https://apps.apple.com/us/app/california-fitness/id6748942683" target="_blank"
+                            class="btn-download ios">
+                            <img src="assets/svgs/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store"
+                                class="store-badge">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=it.zucchetti.wellbyncf" target="_blank"
+                            class="btn-download android">
+                            <img src="assets/svgs/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"
+                                class="store-badge">
+                        </a>
+                        <a href="#intro-actions" class="btn-link" id="hero-try-free">Try <span
+                                class="gummi-text">Gummi</span> for free</a>
+                    </div>
+                </div>
+
+                <div class="hero-stats animate-on-scroll fade-in-scale delay-4">
+                    <div class="stat-large">
+                        <span class="stat-number-large">2.9 million characters.</span>
+                        <span class="stat-description">That's the capacity of <span class="gummi-text">GummiGPT</span>
+                            for PDF analysis and AI chat — without any file splitting required. It's time to unlock
+                            unlimited content creation.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introducing Section -->
+        <section class="introducing">
+            <div class="container">
+                <div class="intro-content">
+                    <h2 class="intro-title animate-on-scroll fade-in-up">Introducing <span
+                            class="gummi-text">Gummi</span></h2>
+                    <h3 class="intro-subtitle animate-on-scroll fade-in-up delay-1">Now available on iPhone and Android
+                    </h3>
+                    <p class="intro-description animate-on-scroll fade-in-up delay-2">
+                        <span class="gummi-text">Gummi</span> leverages modern AI technology to transform each of your
+                        photos into a unique story. Create captions, choose music, get posting advice, and chat with AI
+                        handling up to 2.9 million characters.
+                    </p>
+
+                    <div class="intro-actions animate-on-scroll fade-in-scale delay-3" id="intro-actions">
+                        <a href="https://apps.apple.com/us/app/california-fitness/id6748942683" target="_blank"
+                            class="btn-download ios">
+                            <img src="assets/svgs/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store"
+                                class="store-badge">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=it.zucchetti.wellbyncf" target="_blank"
+                            class="btn-download android">
+                            <img src="assets/svgs/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"
+                                class="store-badge">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact">
+            <div class="container">
+                <div class="impact-header">
+                    <h2 class="section-title animate-on-scroll fade-in-up">Why Choose <span
+                            class="gummi-text">Gummi</span>?</h2>
+                    <h3 class="impact-subtitle animate-on-scroll fade-in-up delay-1">Powerful features that make your
+                        content stand out</h3>
+                </div>
+
+                <div class="impact-stats animate-on-scroll fade-in-scale delay-2">
+                    <div class="impact-stat animate-on-scroll fade-in-up delay-3">
+                        <div class="impact-number">30K+</div>
+                        <div class="impact-label">downloads</div>
+                    </div>
+                    <div class="impact-stat animate-on-scroll fade-in-up delay-4">
+                        <div class="impact-number">500K+</div>
+                        <div class="impact-label">uses</div>
+                    </div>
+                    <div class="impact-stat animate-on-scroll fade-in-up delay-5">
+                        <div class="impact-number">4.9★</div>
+                        <div class="impact-label">rating</div>
+                    </div>
+                </div>
+
+                <div class="impact-note animate-on-scroll fade-in-up delay-3">
+                    <p>*Trusted by thousands of content creators worldwide with proven results</p>
+                </div>
+
+                <div class="impact-benefits">
+                    <div class="benefit animate-on-scroll slide-in-left delay-1">
+                        <div class="benefit-percent">📸</div>
+                        <div class="benefit-text">Content Optimization</div>
+                        <div class="benefit-desc">Make your content stand out with unique captions, music, and
+                            personalized posting times.</div>
+                    </div>
+                    <div class="benefit animate-on-scroll fade-in-up delay-2">
+                        <div class="benefit-percent">🎯</div>
+                        <div class="benefit-text">User-Friendly Interface</div>
+                        <div class="benefit-desc">Easy-to-use design allows you to create, edit, and share content
+                            without complicated instructions.</div>
+                    </div>
+                    <div class="benefit animate-on-scroll slide-in-right delay-3">
+                        <div class="benefit-percent">🤖</div>
+                        <div class="benefit-text">Powerful AI Features</div>
+                        <div class="benefit-desc">Leading AI technologies providing diverse and in-depth interaction
+                            experiences.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="community">
+            <div class="container">
+                <div class="community-header">
+                    <h2 class="section-title animate-on-scroll fade-in-up">Community</h2>
+                    <h3 class="community-subtitle animate-on-scroll fade-in-up delay-1">"This app has<br>transformed my
+                        content"</h3>
+                    <p class="community-description animate-on-scroll fade-in-up delay-2">Hear how <span
+                            class="gummi-text">Gummi</span> revolutionizes content creation, directly from creators
+                        who've made the journey</p>
+                </div>
+
+                <div class="testimonials animate-on-scroll fade-in-scale delay-3">
+                    <div class="testimonial-track">
+                        <div class="testimonial">
+                            <div class="testimonial-avatar">📸</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Emma Wilson</div>
+                                <div class="testimonial-title">🇺🇸 Los Angeles, USA<br>Content Creator & Influencer
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-avatar">🎵</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Marco Silva</div>
+                                <div class="testimonial-title">🇧🇷 São Paulo, Brazil<br>Music Producer</div>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-avatar">📱</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Lisa Chang</div>
+                                <div class="testimonial-title">🇹🇼 Taipei, Taiwan<br>Social Media Manager</div>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-avatar">✍️</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Ahmed Hassan</div>
+                                <div class="testimonial-title">🇪🇬 Cairo, Egypt<br>Digital Marketing Expert</div>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-avatar">🎨</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Sophie Martin</div>
+                                <div class="testimonial-title">🇫🇷 Paris, France<br>Creative Director</div>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-avatar">📄</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">James Taylor</div>
+                                <div class="testimonial-title">🇬🇧 London, UK<br>Business Analyst</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo" class="demo">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title animate-on-scroll fade-in-up">See <span class="gummi-text">Gummi</span> in
+                        Action</h2>
+                    <p class="section-description animate-on-scroll fade-in-up delay-1">
+                        Watch how <span class="gummi-text">Gummi</span> transforms your photos into engaging content
+                        with AI-powered captions, music selection, and unlimited PDF analysis
+                    </p>
+                </div>
+
+                <div class="demo-video animate-on-scroll fade-in-scale delay-2">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/08lPQW5ZoH8" title="Gummi Demo" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="features-header">
+                    <h2 class="section-title animate-on-scroll fade-in-up">Key Features</h2>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card animate-on-scroll slide-in-left delay-1">
+                        <div class="feature-icon">📸</div>
+                        <h3 class="feature-title">Custom Captions & Music®</h3>
+                        <h4 class="feature-subtitle">AI-powered content creation</h4>
+                        <p class="feature-description">
+                            AI analyzes your images to suggest perfect captions and background music. Customize to
+                            reflect your personal style.
+                        </p>
+                    </div>
+
+                    <div class="feature-card animate-on-scroll fade-in-up delay-2">
+                        <div class="feature-icon">⏰</div>
+                        <h3 class="feature-title">Posting Time Advice®</h3>
+                        <h4 class="feature-subtitle">Optimal engagement timing</h4>
+                        <p class="feature-description">
+                            Utilize Facebook data to determine the most optimal time for your posts, naturally
+                            increasing engagement.
+                        </p>
+                    </div>
+
+                    <div class="feature-card animate-on-scroll slide-in-right delay-3">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">Unlimited <span class="gummi-text">GummiGPT</span>®</h3>
+                        <h4 class="feature-subtitle">2.9M character AI chat</h4>
+                        <p class="feature-description">
+                            Powerful Q&A tool allowing unlimited PDF uploads and image analysis without restrictions. No
+                            more file splitting!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="final-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title animate-on-scroll fade-in-up">Transform your content,<br>find your voice.</h2>
+
+                    <div class="cta-actions animate-on-scroll fade-in-scale delay-1">
+                        <a href="#intro-actions" class="btn-primary large" id="cta-try-free">Try <span
+                                class="gummi-text">Gummi</span> for free</a>
+                    </div>
+
+                    <div class="cta-logos animate-on-scroll fade-in-up delay-2">
+                        <span class="cta-logos-title">Supporting content creators around the world</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="https://apps.apple.com/us/app/california-fitness/id6748942683" target="_blank">Download for
+                        iOS</a>
+                    <a href="https://play.google.com/store/apps/details?id=it.zucchetti.wellbyncf"
+                        target="_blank">Download for Android</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Features</h4>
+                    <a href="#"><span class="gummi-text">GummiGPT</span> AI Chat</a>
+                    <a href="#">PDF Analysis (2.9M chars)</a>
+                    <a href="#">Posting Time Advice</a>
+                    <a href="#">Content Optimization</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <a href="https://www.facebook.com/NOVAUniverseSoftware" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/gummi.ai/" target="_blank">Instagram <span
+                            class="vn-note">*</span></a>
+                    <a href="https://www.threads.net/@gummi.ai" target="_blank">Threads <span
+                            class="vn-note">*</span></a>
+                    <p class="community-note">*Vietnamese community focused</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="https://novaunisoft.com/gummi-terms-en" target="_blank">Terms of Use</a>
+                    <a href="https://novaunisoft.com/gummi-privacy-en" target="_blank">Privacy Policy</a>
+                    <a href="https://www.facebook.com/NOVAUniverseSoftware" target="_blank">Help Center</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-brand">
+                    <img src="assets/images/logo_gummi.png" alt="Gummi" class="footer-logo">
+                    <span class="gummi-text">Gummi</span>
+                </div>
+                <p>&copy; 2025 NOVA UNIVERSE SOFTWARE COMPANY LIMITED. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Downloads Bar -->
+    <div class="live-downloads-bar">
+        <div class="downloads-content">
+            <span class="downloads-pulse"></span>
+            <span class="downloads-text">
+                <span class="downloads-count" id="downloads-count"></span> creations with Gummi
+            </span>
+        </div>
+    </div>
+
+    <script>
+        // Theme Management System
+        class ThemeManager {
+            constructor() {
+                this.currentTheme = this.getStoredTheme() || 'system';
+                this.init();
+            }
+
+            init() {
+                this.applyTheme(this.currentTheme);
+                this.setupEventListeners();
+                this.updateThemeIcon();
+
+                // Listen for system theme changes
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                    if (this.currentTheme === 'system') {
+                        this.applySystemTheme();
+                    }
+                });
+            }
+
+            setupEventListeners() {
+                const themeToggle = document.getElementById('theme-toggle');
+                const themeMenu = document.getElementById('theme-menu');
+                const themeOptions = document.querySelectorAll('.theme-option');
+
+                // Toggle theme menu
+                themeToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    themeMenu.classList.toggle('active');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', () => {
+                    themeMenu.classList.remove('active');
+                });
+
+                // Handle theme selection
+                themeOptions.forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const theme = option.dataset.theme;
+                        this.setTheme(theme);
+                        themeMenu.classList.remove('active');
+                    });
+                });
+            }
+
+            getStoredTheme() {
+                try {
+                    return localStorage.getItem('gummi-theme');
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            storeTheme(theme) {
+                try {
+                    localStorage.setItem('gummi-theme', theme);
+                } catch (e) {
+                    // Silent fail for localStorage issues
+                }
+            }
+
+            setTheme(theme) {
+                this.currentTheme = theme;
+                this.storeTheme(theme);
+                this.applyTheme(theme);
+                this.updateThemeIcon();
+                this.updateActiveOption();
+            }
+
+            applyTheme(theme) {
+                const html = document.documentElement;
+
+                // Remove existing theme classes
+                html.classList.remove('light-theme', 'dark-theme');
+
+                if (theme === 'light') {
+                    html.classList.add('light-theme');
+                } else if (theme === 'dark') {
+                    html.classList.add('dark-theme');
+                } else {
+                    // System theme
+                    this.applySystemTheme();
+                }
+            }
+
+            applySystemTheme() {
+                const html = document.documentElement;
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                html.classList.remove('light-theme', 'dark-theme');
+
+                if (prefersDark) {
+                    html.classList.add('dark-theme');
+                } else {
+                    html.classList.add('light-theme');
+                }
+            }
+
+            updateThemeIcon() {
+                const themeIcon = document.querySelector('.theme-icon');
+                const isDark = document.documentElement.classList.contains('dark-theme');
+
+                if (this.currentTheme === 'system') {
+                    themeIcon.textContent = '💻';
+                } else if (this.currentTheme === 'dark' || isDark) {
+                    themeIcon.textContent = '🌙';
+                } else {
+                    themeIcon.textContent = '☀️';
+                }
+            }
+
+            updateActiveOption() {
+                const themeOptions = document.querySelectorAll('.theme-option');
+                themeOptions.forEach(option => {
+                    option.classList.toggle('active', option.dataset.theme === this.currentTheme);
+                });
+            }
+        }
+
+        // Initialize theme manager when DOM is ready
+        let themeManager;
+
+        // Device detection and smart redirect for "Try for free" buttons
+        function detectDevice() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isIOS = /iphone|ipad|ipod/.test(userAgent);
+            const isMacOS = /mac|macintosh/.test(userAgent) && !/iphone|ipad|ipod/.test(userAgent);
+            const isAppleDevice = isIOS || isMacOS;
+            const isAndroid = /android/.test(userAgent);
+
+            return { isIOS, isMacOS, isAppleDevice, isAndroid };
+        }
+
+        function handleTryFreeClick(event) {
+            event.preventDefault();
+
+            const { isAppleDevice, isAndroid } = detectDevice();
+
+            if (isAppleDevice) {
+                // Redirect to App Store for all Apple devices (iPhone, iPad, Mac)
+                window.open('https://apps.apple.com/us/app/california-fitness/id6748942683', '_blank');
+            } else if (isAndroid) {
+                // Redirect to Google Play Store
+                window.open('https://play.google.com/store/apps/details?id=it.zucchetti.wellbyncf', '_blank');
+            } else {
+                // Scroll to download section for other platforms
+                document.getElementById('intro-actions').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        }
+
+        // Add event listeners to all "Try for free" buttons
+        document.addEventListener('DOMContentLoaded', function () {
+            const tryFreeButtons = [
+                'nav-try-free',
+                'hero-try-free',
+                'cta-try-free'
+            ];
+
+            tryFreeButtons.forEach(buttonId => {
+                const button = document.getElementById(buttonId);
+                if (button) {
+                    button.addEventListener('click', handleTryFreeClick);
+                }
+            });
+        });
+
+        // Live Downloads Counter Configuration
+        const DOWNLOADS_CONFIG = {
+            // ============ CONFIGURATION VARIABLES ============
+            baseDownloads: 300000,        // Current total downloads
+            baseDate: '2025-06-13',      // Reference date (YYYY-MM-DD)
+            dailyDownloads: 30000,         // Average downloads per day
+            variance: 100,                // Random variance (+/- percentage)
+
+            // ============ CALCULATED VALUES ============
+            // These will be calculated automatically based on GMT+0 time
+        };
+
+        // Seeded random function for consistent results across all users
+        function seededRandom(seed) {
+            const x = Math.sin(seed) * 10000;
+            return x - Math.floor(x);
+        }
+
+        // Calculate downloads based on time
+        function calculateRealTimeDownloads() {
+            const now = new Date();
+            const utcNow = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+
+            // Calculate days since base date
+            const baseDate = new Date(DOWNLOADS_CONFIG.baseDate + 'T00:00:00Z');
+            const daysSinceBase = Math.floor((utcNow - baseDate) / (1000 * 60 * 60 * 24));
+
+            // Calculate today's progress (0-1)
+            const todayStart = new Date(utcNow.getFullYear(), utcNow.getMonth(), utcNow.getDate());
+            const todayProgress = (utcNow - todayStart) / (1000 * 60 * 60 * 24);
+
+            // Create deterministic seed from current date
+            const dateSeed = parseInt(utcNow.getFullYear().toString() +
+                (utcNow.getMonth() + 1).toString().padStart(2, '0') +
+                utcNow.getDate().toString().padStart(2, '0'));
+
+            // Calculate daily variance (same for entire day)
+            const dailyVariance = (seededRandom(dateSeed) - 0.5) * 2 * (DOWNLOADS_CONFIG.variance / 100);
+            const adjustedDailyDownloads = Math.round(DOWNLOADS_CONFIG.dailyDownloads * (1 + dailyVariance));
+
+            // Calculate total downloads up to yesterday
+            let totalDownloads = DOWNLOADS_CONFIG.baseDownloads;
+
+            // Add downloads from completed days
+            for (let i = 0; i < daysSinceBase; i++) {
+                const dayDateSeed = dateSeed - i;
+                const dayVariance = (seededRandom(dayDateSeed) - 0.5) * 2 * (DOWNLOADS_CONFIG.variance / 100);
+                const dayDownloads = Math.round(DOWNLOADS_CONFIG.dailyDownloads * (1 + dayVariance));
+                totalDownloads += dayDownloads;
+            }
+
+            // Add today's progress
+            const todayDownloads = Math.floor(adjustedDailyDownloads * todayProgress);
+            totalDownloads += todayDownloads;
+
+            return {
+                total: totalDownloads,
+                todayOnly: todayDownloads,
+                todayTarget: adjustedDailyDownloads
+            };
+        }
+
+        // Create digit structure
+        function createDigitStructure(numberString) {
+            const digits = [];
+            let digitIndex = 0;
+
+            for (let i = 0; i < numberString.length; i++) {
+                const char = numberString[i];
+                if (char === ',') {
+                    digits.push({ type: 'comma', char: char });
+                } else {
+                    digits.push({ type: 'digit', char: char, index: digitIndex++ });
+                }
+            }
+            return digits;
+        }
+
+        // Animate individual digits that changed
+        function animateNumber(element, newValue) {
+            const newNumberString = newValue.toLocaleString();
+            const oldNumberString = element.getAttribute('data-current') || '0';
+
+            if (oldNumberString === newNumberString) return;
+
+            const newDigits = createDigitStructure(newNumberString);
+            const oldDigits = createDigitStructure(oldNumberString);
+
+            // Clear and rebuild structure
+            element.innerHTML = '';
+
+            newDigits.forEach((digitInfo, index) => {
+                if (digitInfo.type === 'comma') {
+                    const comma = document.createElement('span');
+                    comma.className = 'comma';
+                    comma.textContent = ',';
+                    element.appendChild(comma);
+                } else {
+                    const container = document.createElement('span');
+                    container.className = 'digit-container';
+
+                    const digit = document.createElement('span');
+                    digit.className = 'digit';
+                    digit.textContent = digitInfo.char;
+
+                    container.appendChild(digit);
+                    element.appendChild(container);
+
+                    // Check if this digit changed
+                    const oldDigit = oldDigits.find(d => d.type === 'digit' && d.index === digitInfo.index);
+                    if (!oldDigit || oldDigit.char !== digitInfo.char) {
+                        // Animate this digit
+                        setTimeout(() => {
+                            container.classList.add('updating');
+
+                            setTimeout(() => {
+                                digit.textContent = digitInfo.char;
+                            }, 150);
+
+                            setTimeout(() => {
+                                container.classList.remove('updating');
+                            }, 300);
+                        }, 10);
+                    }
+                }
+            });
+
+            element.setAttribute('data-current', newNumberString);
+        }
+
+        // Update downloads display
+        function updateDownloadsDisplay() {
+            const downloads = calculateRealTimeDownloads();
+            const countElement = document.getElementById('downloads-count');
+
+            if (countElement) {
+                const currentValue = parseInt((countElement.getAttribute('data-current') || '0').replace(/,/g, '')) || 0;
+
+                // Only animate if value changed
+                if (currentValue !== downloads.total) {
+                    animateNumber(countElement, downloads.total);
+                }
+            }
+        }
+
+        // Initialize and start the counter
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initial update
+            updateDownloadsDisplay();
+
+            // Update every second
+            setInterval(updateDownloadsDisplay, 1000);
+
+            // Log configuration for debugging (remove in production)
+            console.log('Downloads Counter Configuration:', DOWNLOADS_CONFIG);
+            console.log('Current calculation:', calculateRealTimeDownloads());
+        });
+
+        // Apple-style Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add a subtle delay to make it feel more Apple-like
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, 50);
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Initialize scroll animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Typing Animation
+        class TypingAnimation {
+            constructor(elementId, texts, options = {}) {
+                this.element = document.getElementById(elementId);
+                this.texts = texts;
+                this.typeSpeed = options.typeSpeed || 100;
+                this.deleteSpeed = options.deleteSpeed || 50;
+                this.delayBetweenTexts = options.delayBetweenTexts || 2000;
+                this.currentTextIndex = 0;
+                this.currentCharIndex = 0;
+                this.isDeleting = false;
+                this.isWaiting = false;
+            }
+
+            type() {
+                const currentText = this.texts[this.currentTextIndex];
+
+                if (this.isWaiting) {
+                    setTimeout(() => {
+                        this.isWaiting = false;
+                        this.isDeleting = true;
+                        this.type();
+                    }, this.delayBetweenTexts);
+                    return;
+                }
+
+                if (this.isDeleting) {
+                    // Deleting characters
+                    if (this.currentCharIndex > 0) {
+                        this.currentCharIndex--;
+                        this.element.textContent = currentText.substring(0, this.currentCharIndex);
+                        setTimeout(() => this.type(), this.deleteSpeed);
+                    } else {
+                        // Move to next text
+                        this.isDeleting = false;
+                        this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
+                        setTimeout(() => this.type(), 500);
+                    }
+                } else {
+                    // Typing characters
+                    if (this.currentCharIndex < currentText.length) {
+                        this.currentCharIndex++;
+                        this.element.textContent = currentText.substring(0, this.currentCharIndex);
+                        setTimeout(() => this.type(), this.typeSpeed);
+                    } else {
+                        // Text complete, wait before deleting
+                        this.isWaiting = true;
+                        this.type();
+                    }
+                }
+            }
+
+            start() {
+                this.type();
+            }
+
+            startWithFirstText() {
+                // Text is already shown, start with waiting then deleting
+                this.currentCharIndex = this.texts[0].length;
+                this.isWaiting = true;
+                this.type();
+            }
+        }
+
+        // Initialize theme manager first
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize theme system
+            themeManager = new ThemeManager();
+
+            // Initialize typing animation when page loads
+            const typingTexts = [
+                "All-in-One AI Chatbot",
+                "Image Caption Generator",
+                "PDF Analysis Tool",
+                "Caption Generator & Music"
+            ];
+
+            // Set initial text immediately
+            const typingElement = document.getElementById('typing-text');
+            typingElement.textContent = typingTexts[0]; // Show "Image Caption Generator" immediately
+
+            const typingAnimation = new TypingAnimation('typing-text', typingTexts, {
+                typeSpeed: 80,
+                deleteSpeed: 40,
+                delayBetweenTexts: 2500
+            });
+
+            // Start animation (will start with deleting current text) after a delay
+            setTimeout(() => {
+                typingAnimation.startWithFirstText();
+            }, 2000);
+        });
+
+        // Animated Counter System
+        class AnimatedCounter {
+            constructor(element, targetValue, options = {}) {
+                this.element = element;
+                this.targetValue = targetValue;
+                this.currentValue = 0;
+                this.duration = options.duration || 2000;
+                this.delay = options.delay || 0;
+                this.suffix = options.suffix || '';
+                this.decimals = options.decimals || 0;
+                this.useK = options.useK || false;
+                this.useCommas = options.useCommas || false;
+                this.animated = false;
+
+                // Store original text for fallback
+                this.originalText = this.element.textContent;
+
+                // Set initial value to 0
+                this.element.textContent = '0' + this.suffix;
+            }
+
+            formatNumber(value) {
+                if (this.useK) {
+                    if (value >= 1000) {
+                        const kValue = value / 1000;
+                        return Math.floor(kValue) + 'K' + this.suffix;
+                    }
+                }
+
+                if (this.useCommas) {
+                    return value.toLocaleString() + this.suffix;
+                }
+
+                return value.toFixed(this.decimals) + this.suffix;
+            }
+
+            easeOutQuart(t) {
+                return 1 - Math.pow(1 - t, 4);
+            }
+
+            animate() {
+                if (this.animated) return;
+                this.animated = true;
+
+                setTimeout(() => {
+                    // Add counting class for visual effect
+                    this.element.classList.add('counting');
+
+                    const startTime = Date.now();
+                    const animate = () => {
+                        const elapsed = Date.now() - startTime;
+                        const progress = Math.min(elapsed / this.duration, 1);
+
+                        // Apply easing
+                        const easedProgress = this.easeOutQuart(progress);
+
+                        this.currentValue = this.targetValue * easedProgress;
+                        this.element.textContent = this.formatNumber(Math.floor(this.currentValue));
+
+                        if (progress < 1) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            // Ensure final value is exact
+                            this.element.textContent = this.formatNumber(this.targetValue);
+
+                            // Remove counting class and add completion effect
+                            this.element.classList.remove('counting');
+                            this.element.classList.add('counter-complete');
+
+                            // Remove completion class after animation
+                            setTimeout(() => {
+                                this.element.classList.remove('counter-complete');
+                            }, 400);
+                        }
+                    };
+
+                    requestAnimationFrame(animate);
+                }, this.delay);
+            }
+        }
+
+        // Initialize counters when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all impact numbers and set up animations
+            const impactStats = document.querySelectorAll('.impact-number');
+            const counters = [];
+
+            impactStats.forEach((element, index) => {
+                const text = element.textContent.trim();
+                let counter;
+
+                if (text === '30K+') {
+                    counter = new AnimatedCounter(element, 30, {
+                        duration: 2000,
+                        delay: index * 200,
+                        suffix: 'K+',
+                        useK: true
+                    });
+                } else if (text === '500K+') {
+                    counter = new AnimatedCounter(element, 500, {
+                        duration: 2200,
+                        delay: index * 200,
+                        suffix: 'K+',
+                        useK: true
+                    });
+                } else if (text === '4.9★') {
+                    // Keep rating fixed at 4.9★ - no animation
+                    element.classList.add('rating-fixed');
+                    return; // Skip adding to counters array
+                }
+
+                if (counter) {
+                    counters.push(counter);
+                }
+            });
+
+            // Create enhanced observer for impact stats
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Start all counter animations
+                        counters.forEach(counter => counter.animate());
+
+                        // Add visible class for other animations
+                        entry.target.classList.add('visible');
+
+                        // Stop observing once animated
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            // Observe the impact stats container
+            const impactStatsContainer = document.querySelector('.impact-stats');
+            if (impactStatsContainer) {
+                statsObserver.observe(impactStatsContainer);
+            }
+        });
+
+        // Also animate the rating subtitle in hero section
+        document.addEventListener('DOMContentLoaded', function () {
+            const ratingSubtitle = document.querySelector('.rating-subtitle');
+            if (ratingSubtitle && ratingSubtitle.textContent.includes('30K+ Downloads • 500K+ Uses')) {
+                // Create a more sophisticated animation for the hero stats
+                setTimeout(() => {
+                    const text = ratingSubtitle.textContent;
+                    ratingSubtitle.innerHTML = text
+                        .replace('30K+', '<span class="hero-stat-number" data-target="30">0K+</span>')
+                        .replace('500K+', '<span class="hero-stat-number" data-target="500">0K+</span>');
+
+                    // Animate hero stats
+                    const heroStatNumbers = ratingSubtitle.querySelectorAll('.hero-stat-number');
+                    heroStatNumbers.forEach((element, index) => {
+                        const target = parseInt(element.dataset.target);
+                        const heroCounter = new AnimatedCounter(element, target, {
+                            duration: 1500,
+                            delay: index * 150,
+                            suffix: 'K+',
+                            useK: true
+                        });
+
+                        setTimeout(() => {
+                            heroCounter.animate();
+                        }, 1000); // Start after hero section loads
+                    });
+                }, 500);
+            }
+        });
+    </script>
+</body>
+
+</html>
