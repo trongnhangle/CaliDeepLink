@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cali Life - California Fitness & Yoga</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1a0505;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            background-color: #1a0505;
+            background-image: url('assets/backgroud.png');
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position: center 120px;
+            padding: 28px 20px 32px;
+            position: relative;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .logo img {
+            width: 200px;
+        }
+
+        /* Body text */
+        .body-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #f0f0f0;
+            margin-bottom: 22px;
+        }
+
+        .body-text strong {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* Banner */
+        .banner {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 26px;
+        }
+
+        .banner img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Why section */
+        .why-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        /* Feature cards */
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 26px;
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border: 1.5px solid #c0392b;
+            border-radius: 10px;
+            padding: 14px 16px;
+            background-color: rgba(26, 5, 5, 0.4);
+        }
+
+        .feature-card img {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: #f0f0f0;
+            line-height: 1.5;
+        }
+
+        /* Closing text */
+        .closing-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #f0f0f0;
+            margin-bottom: 10px;
+        }
+
+        .sign-off {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #f0f0f0;
+            margin-bottom: 28px;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background-color: #e0231c;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-btn:hover {
+            background-color: #c0180f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="assets/logo.png" alt="California Fitness & Yoga" />
+        </div>
+
+        <!-- Intro text -->
+        <p class="body-text">
+            Kính gửi Quý Hội viên,<br />
+            Với mong muốn nâng cao chất lượng dịch vụ và mang đến sự thuận tiện tối đa trong quá trình tập luyện,
+            California Fitness &amp; Yoga xin trân trọng thông báo:<br />
+            Kể từ ngày <strong>16/03/2026</strong>, để tiếp tục sử dụng các dịch vụ, đăng ký lịch tập và quản lý thẻ hội
+            viên, Quý khách vui lòng chuyển sang sử dụng ứng dụng Cali Life.
+        </p>
+
+        <!-- Banner -->
+        <div class="banner">
+            <img src="assets/banner.png" alt="Ra mắt ứng dụng Cali Life" />
+        </div>
+
+        <!-- Why download -->
+        <h2 class="why-title">Tại sao bạn cần tải Cali Life?</h2>
+
+        <div class="features">
+            <div class="feature-card">
+                <img src="assets/check_in.png" alt="Check-in" />
+                <p>Check-in vào câu lạc bộ nhanh chóng bằng mã QR</p>
+            </div>
+            <div class="feature-card">
+                <img src="assets/book.png" alt="Đặt lịch" />
+                <p>Đặt lịch lớp học (Group X, Yoga) chỉ với vài cú chạm</p>
+            </div>
+            <div class="feature-card">
+                <img src="assets/follow.png" alt="Theo dõi ưu đãi" />
+                <p>Theo dõi các chương trình ưu đãi độc quyền cho hội viên</p>
+            </div>
+        </div>
+
+        <!-- Closing -->
+        <p class="closing-text">
+            Quý Hội viên vui lòng tải ứng dụng ngay hôm nay để không gián đoạn việc tập luyện.
+        </p>
+        <p class="sign-off">
+            Trân trọng,<br />
+            Đội ngũ California Fitness &amp; Yoga
+        </p>
+
+        <!-- CTA -->
+        <a href="#" class="cta-btn" id="ctaBtn">Tải Cali Life</a>
+
+    </div>
+
+  <script>
+    var btn = document.getElementById('ctaBtn');
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    var isApple = /iPhone|iPad|iPod|Macintosh|Mac OS X/i.test(ua);
+    btn.href = isApple
+      ? 'https://apps.apple.com/vn/app/cali-life/id6759941144'
+      : 'https://play.google.com/store/apps/details?id=com.gymlife.nicolaeusebi.gymlife';
+  </script>
+</body>
+
+</html>
