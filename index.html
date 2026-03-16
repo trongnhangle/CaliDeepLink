@@ -304,22 +304,22 @@
     <script>
         var translations = {
             vi: {
-                bodyText: 'Kính gửi Quý Hội viên,<br />Với mong muốn nâng cao chất lượng dịch vụ và mang đến trải nghiệm tối đa trong quá trình tập luyện, California Wellness &amp; Yoga xin trân trọng thông báo chức năng này trên LivWell sẽ được chuyển sang một ứng dụng mới. Lịch trình cụ thể như sau:<br /><br />· Ngày <strong>26/03/2026</strong>: Ra mắt ứng dụng mới - Quý Hội viên có thể download cài đặt và trải nghiệm.<br />· Kể từ ngày <strong>01/04/2026</strong>: chức năng California Fitness sẽ chính thức được chuyển qua ứng dụng mới.<br /><br />Trân trọng cảm ơn Quý Hội viên đã luôn tin tưởng và gắn bó với California Wellness &amp; Yoga.',
+                bodyText: 'Kính gửi Quý Hội viên,<br />Nhằm nâng cao chất lượng dịch vụ và trải nghiệm tập luyện cho Quý Hội viên, California Fitness &amp; Yoga xin thông báo các tiện ích trên ứng dụng LivWell sẽ được chuyển sang ứng dụng mới - <strong>Cali Life</strong>.<br /><br /><strong>Lịch chuyển đổi</strong><br /><br />· <strong>26.03.2026 - App Cali Life chính thức ra mắt</strong><br />Hội viên có thể tải ứng dụng và trải nghiệm.<br /><br />· <strong>01.04.2026</strong><br />Tất cả các tiện ích dành cho hội viên California Fitness &amp; Yoga sẽ được sử dụng hoàn toàn trên ứng dụng mới <strong>Cali Life</strong>. Các tiện ích này sẽ không còn được sử dụng trên <strong>LivWell</strong>.<br /><br />Cảm ơn Quý Hội viên đã luôn tin tưởng và gắn bó với California Wellness &amp; Yoga.',
                 bannerAlt: 'Ra mắt ứng dụng Cali Life',
-                whyTitle: 'Tại sao bạn cần tải Cali Life?',
+                whyTitle: 'Tiện ích dành cho hội viên',
                 feature1: 'Check-in vào câu lạc bộ nhanh chóng bằng mã QR',
-                feature2: 'Đặt lịch lớp học (Group X, Yoga) chỉ với vài cú chạm',
-                feature3: 'Theo dõi các chương trình ưu đãi độc quyền cho hội viên',
+                feature2: 'Đặt trước lịch lớp Group X và Yoga',
+                feature3: 'Cập nhật ưu đãi và quyền lợi độc quyền',
                 signOff: 'Trân trọng,<br />Đội ngũ California Fitness &amp; Yoga',
                 ctaBtn: 'Tải Cali Life'
             },
             en: {
-                bodyText: 'Dear Members,<br />To improve our service quality and maximize your workout experience, California Wellness &amp; Yoga would like to inform you that this feature on LivWell will be migrated to a new application. The specific schedule is as follows:<br /><br />· <strong>March 26, 2026</strong>: New app launch – Members can download, install, and explore the app.<br />· From <strong>April 1, 2026</strong>: The California Fitness feature will officially move to the new app.<br /><br />Thank you for your continued trust and loyalty to California Wellness &amp; Yoga.',
+                bodyText: 'Dear Members,<br />To enhance the quality of our services and the workout experience for our valued members, California Fitness &amp; Yoga would like to inform you that the member features currently available on the LivWell app will soon move to our new application - <strong>Cali Life</strong>.<br /><br /><strong>Transition schedule</strong><br /><br />· <strong>26.03.2026 - Cali Life officially launches</strong><br />Members can download the app and start exploring the new experience.<br /><br />· <strong>01.04.2026</strong><br />All member features of California Fitness &amp; Yoga will be fully available on the new <strong>Cali Life</strong> app. These features will no longer be accessible on <strong>LivWell</strong>.<br /><br />Thank you for your continued trust and support of <strong>California Fitness &amp; Yoga</strong>.',
                 bannerAlt: 'Cali Life App Launch',
-                whyTitle: 'Why should you download Cali Life?',
-                feature1: 'Quick club check-in using QR code',
-                feature2: 'Book classes (Group X, Yoga) with just a few taps',
-                feature3: 'Track exclusive member promotions and offers',
+                whyTitle: 'Features on Cali Life',
+                feature1: 'Quick club check-in with QR code',
+                feature2: 'Book Group X and Yoga classes in advance',
+                feature3: 'Stay updated with exclusive offers and member privileges',
                 signOff: 'Best regards,<br />The California Fitness &amp; Yoga Team',
                 ctaBtn: 'Download Cali Life'
             }
@@ -333,6 +333,7 @@
 
         function setLang(lang) {
             var t = translations[lang];
+            var ctaBtn = document.getElementById('ctaBtn');
             document.getElementById('bodyText').innerHTML = t.bodyText;
             document.getElementById('bannerImg').alt = t.bannerAlt;
             document.getElementById('whyTitle').textContent = t.whyTitle;
@@ -340,13 +341,15 @@
             document.getElementById('feature2').textContent = t.feature2;
             document.getElementById('feature3').textContent = t.feature3;
             document.getElementById('signOff').innerHTML = t.signOff;
-            document.getElementById('ctaBtn').textContent = t.ctaBtn;
+            if (ctaBtn) {
+                ctaBtn.textContent = t.ctaBtn;
+            }
             document.documentElement.lang = lang;
             document.getElementById('currentFlag').textContent = flags[lang];
             document.getElementById('optVi').classList.toggle('active', lang === 'vi');
             document.getElementById('optEn').classList.toggle('active', lang === 'en');
             document.getElementById('langSwitcher').classList.remove('open');
-            try { localStorage.setItem('cali_lang', lang); } catch (e) {}
+            try { localStorage.setItem('cali_lang', lang); } catch (e) { }
         }
 
         // Close dropdown when clicking outside
@@ -359,7 +362,7 @@
 
         // Priority: saved preference > browser language > default Vietnamese
         var savedLang;
-        try { savedLang = localStorage.getItem('cali_lang'); } catch (e) {}
+        try { savedLang = localStorage.getItem('cali_lang'); } catch (e) { }
         var browserLang = (navigator.language || navigator.userLanguage || 'vi').toLowerCase();
         var initialLang = savedLang || (browserLang.startsWith('vi') ? 'vi' : 'en');
         setLang(initialLang);
@@ -367,9 +370,12 @@
         // App store redirect based on device
         var ua = navigator.userAgent || navigator.vendor || window.opera;
         var isApple = /iPhone|iPad|iPod|Macintosh|Mac OS X/i.test(ua);
-        document.getElementById('ctaBtn').href = isApple
-            ? 'https://apps.apple.com/vn/app/cali-life/id6759941144'
-            : 'https://play.google.com/store/apps/details?id=com.caligym';
+        var ctaBtn = document.getElementById('ctaBtn');
+        if (ctaBtn) {
+            ctaBtn.href = isApple
+                ? 'https://apps.apple.com/vn/app/cali-life/id6759941144'
+                : 'https://play.google.com/store/apps/details?id=com.caligym';
+        }
     </script>
 </body>
 
