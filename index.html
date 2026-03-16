@@ -28,15 +28,117 @@
             background-repeat: no-repeat;
             background-size: 80%;
             background-position: center 120px;
-            padding: 28px 20px 32px;
+            padding: 20px 20px 32px;
             position: relative;
         }
 
-        /* Logo */
+        /* Logo row */
+        .logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
         .logo {
             display: flex;
             justify-content: center;
-            margin-bottom: 24px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            right: 0;
+        }
+
+        .lang-trigger {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 20px;
+            padding: 5px 10px 5px 8px;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.7);
+            transition: background 0.2s ease;
+            user-select: none;
+        }
+
+        .lang-trigger:hover {
+            background: rgba(255, 255, 255, 0.13);
+        }
+
+        .lang-trigger .chevron {
+            font-size: 9px;
+            opacity: 0.6;
+            transition: transform 0.2s ease;
+            margin-top: 1px;
+        }
+
+        .lang-switcher.open .chevron {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: #2a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            min-width: 148px;
+            z-index: 100;
+        }
+
+        .lang-switcher.open .lang-dropdown {
+            display: block;
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            padding: 11px 14px;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.65);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.15s ease, color 0.15s ease;
+            letter-spacing: 0.2px;
+        }
+
+        .lang-option .flag {
+            font-size: 20px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .lang-option.active {
+            color: #fff;
+            background: rgba(224, 35, 28, 0.2);
+        }
+
+        .lang-option.active::after {
+            content: '✓';
+            margin-left: auto;
+            font-size: 12px;
+            color: #e0231c;
+        }
+
+        .lang-option:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.07);
+            color: #fff;
         }
 
         .logo img {
@@ -109,14 +211,7 @@
             line-height: 1.5;
         }
 
-        /* Closing text */
-        .closing-text {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #f0f0f0;
-            margin-bottom: 10px;
-        }
-
+        /* Sign-off */
         .sign-off {
             font-size: 15px;
             line-height: 1.7;
@@ -139,6 +234,7 @@
             cursor: pointer;
             text-decoration: none;
             letter-spacing: 0.3px;
+            transition: background 0.2s ease;
         }
 
         .cta-btn:hover {
@@ -150,63 +246,128 @@
 <body>
     <div class="container">
 
-        <!-- Logo -->
-        <div class="logo">
-            <img src="assets/logo.png" alt="California Fitness & Yoga" />
+        <!-- Logo + Language Switcher -->
+        <div class="logo-row">
+            <div class="logo">
+                <img src="assets/logo.png" alt="California Fitness & Yoga" />
+            </div>
+            <div class="lang-switcher" id="langSwitcher">
+                <div class="lang-trigger" id="langTrigger" onclick="toggleDropdown()">
+                    <span id="currentFlag">🇻🇳</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="lang-dropdown">
+                    <button class="lang-option" id="optVi" onclick="setLang('vi')">
+                        <span class="flag">🇻🇳</span> Tiếng Việt
+                    </button>
+                    <button class="lang-option" id="optEn" onclick="setLang('en')">
+                        <span class="flag">🇺🇸</span> English
+                    </button>
+                </div>
+            </div>
         </div>
 
         <!-- Intro text -->
-        <p class="body-text">
-            Kính gửi Quý Hội viên,<br />
-            Với mong muốn nâng cao chất lượng dịch vụ và mang đến trải nghiệm tối đa trong quá trình tập luyện,
-            California Wellness &amp; Yoga xin trân trọng thông báo chức năng này trên LivWell sẽ được chuyển sang một
-            ứng dụng mới. Lịch trình cụ thể như sau:<br /><br />
-            · Ngày <strong>26/03/2026</strong>: Ra mắt ứng dụng mới - Quý Hội viên có thể download cài đặt và trải
-            nghiệm.<br />
-            · Kể từ ngày <strong>01/04/2026</strong>: chức năng California Fitness sẽ chính thức được chuyển qua ứng
-            dụng mới.<br /><br />
-            Trân trọng cảm ơn Quý Hội viên đã luôn tin tưởng và gắn bó với California Wellness &amp; Yoga.
-        </p>
+        <p class="body-text" id="bodyText"></p>
 
         <!-- Banner -->
         <div class="banner">
-            <img src="assets/banner.png" alt="Ra mắt ứng dụng Cali Life" />
+            <img src="assets/banner.png" id="bannerImg" alt="" />
         </div>
 
         <!-- Why download -->
-        <h2 class="why-title">Tại sao bạn cần tải Cali Life?</h2>
+        <h2 class="why-title" id="whyTitle"></h2>
 
         <div class="features">
             <div class="feature-card">
                 <img src="assets/check_in.png" alt="Check-in" />
-                <p>Check-in vào câu lạc bộ nhanh chóng bằng mã QR</p>
+                <p id="feature1"></p>
             </div>
             <div class="feature-card">
-                <img src="assets/book.png" alt="Đặt lịch" />
-                <p>Đặt lịch lớp học (Group X, Yoga) chỉ với vài cú chạm</p>
+                <img src="assets/book.png" alt="Book" />
+                <p id="feature2"></p>
             </div>
             <div class="feature-card">
-                <img src="assets/follow.png" alt="Theo dõi ưu đãi" />
-                <p>Theo dõi các chương trình ưu đãi độc quyền cho hội viên</p>
+                <img src="assets/follow.png" alt="Offers" />
+                <p id="feature3"></p>
             </div>
         </div>
 
-        <!-- Closing -->
-        <p class="sign-off">
-            Trân trọng,<br />
-            Đội ngũ California Fitness &amp; Yoga
-        </p>
+        <!-- Sign-off -->
+        <p class="sign-off" id="signOff"></p>
 
         <!-- CTA -->
-        <a href="#" class="cta-btn" id="ctaBtn">Tải Cali Life</a>
+        <a href="#" class="cta-btn" id="ctaBtn"></a>
 
     </div>
 
     <script>
-        var btn = document.getElementById('ctaBtn');
+        var translations = {
+            vi: {
+                bodyText: 'Kính gửi Quý Hội viên,<br />Với mong muốn nâng cao chất lượng dịch vụ và mang đến trải nghiệm tối đa trong quá trình tập luyện, California Wellness &amp; Yoga xin trân trọng thông báo chức năng này trên LivWell sẽ được chuyển sang một ứng dụng mới. Lịch trình cụ thể như sau:<br /><br />· Ngày <strong>26/03/2026</strong>: Ra mắt ứng dụng mới - Quý Hội viên có thể download cài đặt và trải nghiệm.<br />· Kể từ ngày <strong>01/04/2026</strong>: chức năng California Fitness sẽ chính thức được chuyển qua ứng dụng mới.<br /><br />Trân trọng cảm ơn Quý Hội viên đã luôn tin tưởng và gắn bó với California Wellness &amp; Yoga.',
+                bannerAlt: 'Ra mắt ứng dụng Cali Life',
+                whyTitle: 'Tại sao bạn cần tải Cali Life?',
+                feature1: 'Check-in vào câu lạc bộ nhanh chóng bằng mã QR',
+                feature2: 'Đặt lịch lớp học (Group X, Yoga) chỉ với vài cú chạm',
+                feature3: 'Theo dõi các chương trình ưu đãi độc quyền cho hội viên',
+                signOff: 'Trân trọng,<br />Đội ngũ California Fitness &amp; Yoga',
+                ctaBtn: 'Tải Cali Life'
+            },
+            en: {
+                bodyText: 'Dear Members,<br />To improve our service quality and maximize your workout experience, California Wellness &amp; Yoga would like to inform you that this feature on LivWell will be migrated to a new application. The specific schedule is as follows:<br /><br />· <strong>March 26, 2026</strong>: New app launch – Members can download, install, and explore the app.<br />· From <strong>April 1, 2026</strong>: The California Fitness feature will officially move to the new app.<br /><br />Thank you for your continued trust and loyalty to California Wellness &amp; Yoga.',
+                bannerAlt: 'Cali Life App Launch',
+                whyTitle: 'Why should you download Cali Life?',
+                feature1: 'Quick club check-in using QR code',
+                feature2: 'Book classes (Group X, Yoga) with just a few taps',
+                feature3: 'Track exclusive member promotions and offers',
+                signOff: 'Best regards,<br />The California Fitness &amp; Yoga Team',
+                ctaBtn: 'Download Cali Life'
+            }
+        };
+
+        var flags = { vi: '🇻🇳', en: '🇺🇸' };
+
+        function toggleDropdown() {
+            document.getElementById('langSwitcher').classList.toggle('open');
+        }
+
+        function setLang(lang) {
+            var t = translations[lang];
+            document.getElementById('bodyText').innerHTML = t.bodyText;
+            document.getElementById('bannerImg').alt = t.bannerAlt;
+            document.getElementById('whyTitle').textContent = t.whyTitle;
+            document.getElementById('feature1').textContent = t.feature1;
+            document.getElementById('feature2').textContent = t.feature2;
+            document.getElementById('feature3').textContent = t.feature3;
+            document.getElementById('signOff').innerHTML = t.signOff;
+            document.getElementById('ctaBtn').textContent = t.ctaBtn;
+            document.documentElement.lang = lang;
+            document.getElementById('currentFlag').textContent = flags[lang];
+            document.getElementById('optVi').classList.toggle('active', lang === 'vi');
+            document.getElementById('optEn').classList.toggle('active', lang === 'en');
+            document.getElementById('langSwitcher').classList.remove('open');
+            try { localStorage.setItem('cali_lang', lang); } catch (e) {}
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            var switcher = document.getElementById('langSwitcher');
+            if (!switcher.contains(e.target)) {
+                switcher.classList.remove('open');
+            }
+        });
+
+        // Priority: saved preference > browser language > default Vietnamese
+        var savedLang;
+        try { savedLang = localStorage.getItem('cali_lang'); } catch (e) {}
+        var browserLang = (navigator.language || navigator.userLanguage || 'vi').toLowerCase();
+        var initialLang = savedLang || (browserLang.startsWith('vi') ? 'vi' : 'en');
+        setLang(initialLang);
+
+        // App store redirect based on device
         var ua = navigator.userAgent || navigator.vendor || window.opera;
         var isApple = /iPhone|iPad|iPod|Macintosh|Mac OS X/i.test(ua);
-        btn.href = isApple
+        document.getElementById('ctaBtn').href = isApple
             ? 'https://apps.apple.com/vn/app/cali-life/id6759941144'
             : 'https://play.google.com/store/apps/details?id=com.caligym';
     </script>
