@@ -164,11 +164,122 @@
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 26px;
+            position: relative;
+            container-type: inline-size;
+            /* enables cqw — scales with banner width */
         }
 
         .banner img {
             width: 100%;
             display: block;
+        }
+
+        /* Banner overlay – left 62%, everything sized in em relative to 2cqw base
+           so the layout is pixel-perfect proportional on every device */
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 62%;
+            background: linear-gradient(to right, rgba(8, 1, 1, 0.94) 50%, transparent 100%);
+            display: flex;
+            align-items: center;
+            font-size: 2.35cqw;
+            /* single source of truth — all children use em */
+            padding: 1.35em 1.65em 1.35em 1.5em;
+        }
+
+        .banner-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.38em;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .banner-headline {
+            font-size: 3.15em;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+            line-height: 0.92;
+            text-shadow: 0 0.2em 1.2em rgba(0, 0, 0, 0.7);
+            text-wrap: balance;
+        }
+
+        .banner-subtitle {
+            font-size: 1.08em;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.3;
+            margin-top: 0.1em;
+        }
+
+        .banner-divider {
+            width: 2.8em;
+            height: 0.2em;
+            background: #e0231c;
+            border-radius: 0.2em;
+            margin: 0.22em 0;
+        }
+
+        .banner-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+        }
+
+        .banner-features li {
+            font-size: 1.05em;
+            color: rgba(255, 255, 255, 0.86);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.48em;
+            line-height: 1.18;
+        }
+
+        .banner-features li::before {
+            content: '';
+            display: inline-block;
+            width: 0.5em;
+            height: 0.5em;
+            background: #e0231c;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 0.28em;
+        }
+
+        .banner-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+            background: #e0231c;
+            color: #fff;
+            font-size: 1.08em;
+            font-weight: 700;
+            padding: 0.72em 1em;
+            border-radius: 2em;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0.3em 1em rgba(224, 35, 28, 0.5);
+            margin-top: 0.35em;
+            align-self: flex-start;
+            white-space: normal;
+            text-align: center;
+            line-height: 1.12;
+            max-width: 100%;
+            text-wrap: balance;
+            text-transform: uppercase;
+        }
+
+        .banner-cta-btn:hover {
+            background: #c0180f;
+            transform: translateY(-0.1em);
+            box-shadow: 0 0.5em 1.4em rgba(224, 35, 28, 0.55);
         }
 
         /* Why section */
@@ -273,6 +384,19 @@
         <!-- Banner -->
         <div class="banner">
             <img src="assets/banner.png" id="bannerImg" alt="" />
+            <div class="banner-overlay">
+                <div class="banner-content">
+                    <div class="banner-headline">CALI LIFE</div>
+                    <p class="banner-subtitle" id="bannerSubtitle"></p>
+                    <div class="banner-divider"></div>
+                    <ul class="banner-features">
+                        <li id="bannerF1"></li>
+                        <li id="bannerF2"></li>
+                        <li id="bannerF3"></li>
+                    </ul>
+                    <a href="#" class="banner-cta-btn" id="bannerCtaBtn"></a>
+                </div>
+            </div>
         </div>
 
         <!-- Why download -->
@@ -311,7 +435,12 @@
                 feature2: 'Đặt trước lịch lớp Group X và Yoga',
                 feature3: 'Cập nhật ưu đãi và quyền lợi độc quyền',
                 signOff: 'Trân trọng,<br />Đội ngũ California Fitness &amp; Yoga',
-                ctaBtn: 'Tải Cali Life'
+                ctaBtn: 'Tải Cali Life',
+                bannerSubtitle: 'Ứng dụng mới dành cho hội viên California từ 26.03.2026',
+                bannerF1: 'Quản lý thẻ',
+                bannerF2: 'Đặt lớp',
+                bannerF3: 'Check-in CLB nhanh chóng',
+                bannerCta: 'Tải app CALI LIFE'
             },
             en: {
                 bodyText: 'Dear Members,<br />To enhance the quality of our services and the workout experience for our valued members, California Fitness &amp; Yoga would like to inform you that the member features currently available on the LivWell app will soon move to our new application - <strong>Cali Life</strong>.<br /><br /><strong>Transition schedule</strong><br /><br />· <strong>26.03.2026 - Cali Life officially launches</strong><br />Members can download the app and start exploring the new experience.<br /><br />· <strong>01.04.2026</strong><br />All member features of California Fitness &amp; Yoga will be fully available on the new <strong>Cali Life</strong> app. These features will no longer be accessible on <strong>LivWell</strong>.<br /><br />Thank you for your continued trust and support of <strong>California Fitness &amp; Yoga</strong>.',
@@ -321,7 +450,12 @@
                 feature2: 'Book Group X and Yoga classes in advance',
                 feature3: 'Stay updated with exclusive offers and member privileges',
                 signOff: 'Best regards,<br />The California Fitness &amp; Yoga Team',
-                ctaBtn: 'Download Cali Life'
+                ctaBtn: 'Download Cali Life',
+                bannerSubtitle: 'The new app for California members from 26.03.2026',
+                bannerF1: 'Manage membership',
+                bannerF2: 'Book classes',
+                bannerF3: 'Check in to clubs quickly',
+                bannerCta: 'Download CALI LIFE'
             }
         };
 
@@ -341,6 +475,11 @@
             document.getElementById('feature2').textContent = t.feature2;
             document.getElementById('feature3').textContent = t.feature3;
             document.getElementById('signOff').innerHTML = t.signOff;
+            document.getElementById('bannerSubtitle').textContent = t.bannerSubtitle;
+            document.getElementById('bannerF1').textContent = t.bannerF1;
+            document.getElementById('bannerF2').textContent = t.bannerF2;
+            document.getElementById('bannerF3').textContent = t.bannerF3;
+            document.getElementById('bannerCtaBtn').textContent = t.bannerCta;
             if (ctaBtn) {
                 ctaBtn.textContent = t.ctaBtn;
             }
@@ -371,10 +510,15 @@
         var ua = navigator.userAgent || navigator.vendor || window.opera;
         var isApple = /iPhone|iPad|iPod|Macintosh|Mac OS X/i.test(ua);
         var ctaBtn = document.getElementById('ctaBtn');
+        var appUrl = isApple
+            ? 'https://apps.apple.com/vn/app/cali-life/id6759941144'
+            : 'https://play.google.com/store/apps/details?id=com.caligym';
         if (ctaBtn) {
-            ctaBtn.href = isApple
-                ? 'https://apps.apple.com/vn/app/cali-life/id6759941144'
-                : 'https://play.google.com/store/apps/details?id=com.caligym';
+            ctaBtn.href = appUrl;
+        }
+        var bannerCtaBtn = document.getElementById('bannerCtaBtn');
+        if (bannerCtaBtn) {
+            bannerCtaBtn.href = appUrl;
         }
     </script>
 </body>
