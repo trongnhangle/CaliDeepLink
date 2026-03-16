@@ -479,7 +479,8 @@
             document.getElementById('bannerF1').textContent = t.bannerF1;
             document.getElementById('bannerF2').textContent = t.bannerF2;
             document.getElementById('bannerF3').textContent = t.bannerF3;
-            document.getElementById('bannerCtaBtn').textContent = t.bannerCta;
+            var bannerCtaBtnEl = document.getElementById('bannerCtaBtn');
+            if (bannerCtaBtnEl) { bannerCtaBtnEl.textContent = t.bannerCta; }
             if (ctaBtn) {
                 ctaBtn.textContent = t.ctaBtn;
             }
